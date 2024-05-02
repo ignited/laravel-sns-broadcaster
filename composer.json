@@ -17,13 +17,13 @@
     "aws"
   ],
   "require": {
-    "php": "^7.2",
+    "php": "^8.2",
     "ext-json": "*",
-    "illuminate/broadcasting": "6.* || 7.* || 8.*",
-    "illuminate/support": "6.* || 7.* || 8.*",
-    "illuminate/contracts": "6.* || 7.* || 8.*",
-    "illuminate/config": "6.* || 7.* || 8.*",
-    "aws/aws-sdk-php": "^3.62"
+    "illuminate/broadcasting": ">=6 <=11",
+    "illuminate/support": ">=6 <=11",
+    "illuminate/contracts": ">=6 <=11",
+    "illuminate/config": ">=6 <=11",
+    "aws/aws-sdk-php": "^3.305"
   },
   "config": {
     "sort-packages": true,
