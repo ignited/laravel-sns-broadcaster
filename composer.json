@@ -19,10 +19,10 @@
   "require": {
     "php": ">=7.4 <8.4",
     "ext-json": "*",
-    "illuminate/broadcasting": ">=6 <=11",
-    "illuminate/support": ">=6 <=11",
-    "illuminate/contracts": ">=6 <=11",
-    "illuminate/config": ">=6 <=11",
+    "illuminate/broadcasting": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+    "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+    "illuminate/contracts": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+    "illuminate/config": "^8.0 || ^9.0 || ^10.0 || ^11.0",
     "aws/aws-sdk-php": "^3.305"
   },
   "config": {
