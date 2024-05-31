@@ -24,17 +24,23 @@ class SnsBroadcaster implements Broadcaster
     protected $suffix;
 
     /**
+     * @var bool
+     */
+    protected $fifo;
+
+    /**
      * SnsBroadcaster constructor.
      *
      * @param  SnsClient  $client
      * @param  string  $topicArn
      * @param  string  $suffix
      */
-    public function __construct(SnsClient $client, string $topicArn, string $suffix)
+    public function __construct(SnsClient $client, string $topicArn, string $suffix, bool $fifo = false)
     {
         $this->snsClient = $client;
         $this->topicArn = $topicArn;
         $this->suffix = $suffix;
+        $this->fifo = $fifo;
     }
 
     /**
@@ -42,11 +48,18 @@ class SnsBroadcaster implements Broadcaster
      */
     public function broadcast(array $channels, $event, array $payload = [])
     {
-        $this->snsClient->publish([
+        $message = [
             'TopicArn' => $this->topicName($channels),
             'Subject' => $event,
             'Message' => json_encode(Arr::except($payload, 'socket')),
-        ]);
+        ];
+
+        if ($this->fifo) {
+            $params['MessageDeduplicationId'] = $this->getDeduplicationId($payload, $event);
+            $params['MessageGroupId'] = $this->getGroupId($channels);
+        }
+
+        $this->snsClient->publish();
     }
 
     /**
@@ -75,5 +88,17 @@ class SnsBroadcaster implements Broadcaster
     private function topicName(array $channels): string
     {
         return $this->topicArn.Arr::first($channels).$this->suffix;
+    }
+
+    private function getDeduplicationId(array $payload, $event): string
+    {
+        // Use a combination of event type and a unique payload attribute or simply generate a UUID
+        return md5(json_encode($payload) . $event);
+    }
+
+    private function getGroupId(array $channels): string
+    {
+        // Usually, a consistent value per channel or event type
+        return 'group-' . Arr::first($channels);
     }
 }
