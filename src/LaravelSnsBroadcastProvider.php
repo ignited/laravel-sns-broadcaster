@@ -23,7 +23,8 @@ class LaravelSnsBroadcastProvider extends ServiceProvider
             return new SnsBroadcaster(
                 $client,
                 $config['arn-prefix'],
-                $config['suffix']
+                $config['suffix'],
+                $config['fifo'] ?? false
             );
         });
     }
