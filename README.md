@@ -15,9 +15,8 @@ This package is a great use cases for applications beings deployed to microservi
 
 ## Requirements
 
-* PHP >= 7.2
-* Laravel >= 6
-* SQS driver for laravel
+* PHP >= 7.4
+* Laravel >= 8
 * SNS in AWS
 
 ## Installation
