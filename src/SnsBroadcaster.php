@@ -1,6 +1,6 @@
 <?php
 
-namespace MaxGaurav\LaravelSnsBroadcaster;
+namespace Ignited\LaravelSnsBroadcaster;
 
 use Aws\Sns\SnsClient;
 use Illuminate\Contracts\Broadcasting\Broadcaster;

@@ -1,9 +1,9 @@
 {
-  "name": "alexw23/laravel-sns-broadcaster",
+  "name": "ignited/laravel-sns-broadcaster",
   "description": "Sns Messages as queues using extended laravel sqs driver.",
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/alexw23/laravel-sns-broadcaster",
+  "homepage": "https://github.com/ignited/laravel-sns-broadcaster",
   "authors": [
     {
       "name": "Alex Whiteside",
@@ -32,13 +32,13 @@
   "extra": {
     "laravel": {
       "providers": [
-        "MaxGaurav\\LaravelSnsBroadcaster\\LaravelSnsBroadcastProvider"
+        "Ignited\\LaravelSnsBroadcaster\\LaravelSnsBroadcastProvider"
       ]
     }
   },
   "autoload": {
     "psr-4": {
-      "MaxGaurav\\LaravelSnsBroadcaster\\": "src"
+      "Ignited\\LaravelSnsBroadcaster\\": "src"
     }
   },
   "minimum-stability": "dev",

@@ -1,9 +1,11 @@
 # Broadcast Events as SNS Topic
 
-[![Packagist](https://badgen.net/packagist/v/maxgaurav/laravel-sns-broadcaster)](https://packagist.org/packages/maxgaurav/laravel-sns-broadcaster)
-[![GitHub tag](https://badgen.net/github/tag/maxgaurav/laravel-sns-broadcaster)](https://github.com/maxgaurav/laravel-sns-broadcaster/releases)
-[![License](https://badgen.net/packagist/license/maxgaurav/laravel-sns-broadcaster)](LICENSE.txt)
-[![Downloads](https://badgen.net/packagist/dt/maxgaurav/laravel-sns-broadcaster)](https://packagist.org/packages/maxgaurav/laravel-sns-broadcaster/stats)
+[![Packagist](https://badgen.net/packagist/v/ignited/laravel-sns-broadcaster)](https://packagist.org/packages/ignited/laravel-sns-broadcaster)
+[![GitHub tag](https://badgen.net/github/tag/ignited/laravel-sns-broadcaster)](https://github.com/ignited/laravel-sns-broadcaster/releases)
+[![License](https://badgen.net/packagist/license/ignited/laravel-sns-broadcaster)](LICENSE.txt)
+[![Downloads](https://badgen.net/packagist/dt/ignited/laravel-sns-broadcaster)](https://packagist.org/packages/ignited/laravel-sns-broadcaster/stats)
+
+*(Original forked from [maxgaurav/laravel-sns-broadcaster](https://github.com/maxgaurav/laravel-sns-broadcaster) but this appears to be abandoned)*
 
 The package allows you to broadcast laravel events as sns topic.
 
@@ -22,7 +24,7 @@ This package is a great use cases for applications beings deployed to microservi
 
 Install using composer
 ```sh
-composer require maxgaurav/laravel-sns-broadcaster
+composer require ignited/laravel-sns-broadcaster
 ```
 
 The package will automatically register its service provider.
