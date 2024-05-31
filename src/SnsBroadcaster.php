@@ -59,7 +59,7 @@ class SnsBroadcaster implements Broadcaster
             $params['MessageGroupId'] = $this->getGroupId($channels);
         }
 
-        $this->snsClient->publish();
+        $this->snsClient->publish($message);
     }
 
     /**
