@@ -54,7 +54,7 @@ class SnsBroadcaster implements Broadcaster
             'Message' => json_encode(Arr::except($payload, 'socket')),
         ];
 
-        if ($this->fifo) {
+        if ($this->fifo || $this->isFifoTopic($channels)) {
             $params['MessageDeduplicationId'] = $this->getDeduplicationId($payload, $event);
             $params['MessageGroupId'] = $this->getGroupId($channels);
         }
@@ -100,5 +100,11 @@ class SnsBroadcaster implements Broadcaster
     {
         // Usually, a consistent value per channel or event type
         return 'group-' . Arr::first($channels);
+    }
+
+    private function isFifoTopic($channels): bool
+    {
+        // $channel contains .fifo
+        return Arr::last(explode('.', Arr::first($channels))) === 'fifo';
     }
 }
