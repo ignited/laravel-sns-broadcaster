@@ -55,8 +55,8 @@ class SnsBroadcaster implements Broadcaster
         ];
 
         if ($this->fifo || $this->isFifoTopic($channels)) {
-            $params['MessageDeduplicationId'] = $this->getDeduplicationId($payload, $event);
-            $params['MessageGroupId'] = $this->getGroupId($channels);
+            $message['MessageDeduplicationId'] = $this->getDeduplicationId($payload, $event);
+            $message['MessageGroupId'] = $this->getGroupId($channels);
         }
 
         $this->snsClient->publish($message);
